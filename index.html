@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grammar Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Grammar Generator</h1>
+    <label>Terminal symbols:</label>
+    <input type="text" id="terminals" placeholder="Enter terminals separated by spaces">
+
+    <label>Non-terminal symbols:</label>
+    <input type="text" id="nonterminals" placeholder="Enter non-terminals separated by spaces">
+
+    <label>Rules (in format A -> aB, B -> b):</label>
+    <textarea id="rules" rows="5" placeholder="Enter rules here, each on a new line"></textarea>
+
+    <label>Start symbol:</label>
+    <input type="text" id="startSymbol" placeholder="Enter start symbol">
+
+    <label>Left border:</label>
+    <input type="range" id="leftBorder" min="0" max="50" value="0"> <span id="leftValue">0</span>
+
+    <label>Right border:</label>
+    <input type="range" id="rightBorder" min="0" max="50" value="5"> <span id="rightValue">5</span>
+
+    <button onclick="useDefaultGrammar()">Use Default Grammar</button>
+    <button onclick="useInputGrammar()">Use Input Grammar</button>
+
+    <div>
+        <label for="chainSelect">Выберите цепочку:</label>
+        <select id="chainSelect">
+            
+        </select>
+        <button id="generateTree">Сгенерировать дерево</button>
+    </div>
+    <div id="treeOutput"></div>
+
+    <div class="output" id="output"></div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
